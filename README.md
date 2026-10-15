@@ -2,6 +2,10 @@
 
 A source control pane in the Claude desktop app's Code tab. `/git-graph` opens it; it never opens on its own. Closed by hand, it stays closed until the next `/git-graph`, and while open it comes back when you return to the session.
 
+![git-graph docked beside a Claude Code session](media/app.png)
+
+*Here Claude has just added a small feature to a project. Without leaving the chat, you can see the two files it changed on the right, a heads-up that a teammate edited one of them too, and the project's whole history.*
+
 ## Install
 
 Paste this into Claude Code and it sets it up for you:
@@ -16,6 +20,64 @@ claude plugin install git-graph@git-graph
 ```
 
 Start a new session, then type `/git-graph`. It needs `git`; the pull request features also need the GitHub CLI (`gh`) signed in. To update later: `claude plugin update git-graph@git-graph`.
+
+## A quick tour
+
+### See everything at a glance
+
+<img src="media/overview.png" alt="The pane: the current branch, changed files, a teammate's branch and the commit history" width="440">
+
+Open the pane and you can see where your project stands. It shows which branch you're on, the files you've changed, and every commit drawn as a timeline, with each person in their own colour. The labels at the top say you're 3 commits behind GitHub and that one of them touches a file you're working on.
+
+It's a quick check before you ask Claude to change anything, and you don't need to remember a single git command.
+
+### See what your teammates pushed
+
+<img src="media/fetch.gif" alt="Pressing Fetch brings in three new commits from a teammate" width="440">
+
+Press **Fetch** and anything your teammates pushed shows up at the top of the timeline, marked as new, before any of it touches your files.
+
+You see other people's work coming before you pull it, so nothing lands by surprise.
+
+### Spot a conflict before it happens
+
+<img src="media/collaboration.png" alt="A warning on a teammate's commit that changes a file you're also editing, and their branch open on the Teammates card" width="440">
+
+When a teammate's commit changes a file you're editing too, it gets an orange ring and a warning that names the file. The Teammates card above shows what each person is working on. Open a row to see their commits and files, or check their branch out.
+
+You find out about a merge conflict while it's still easy to sort out, not halfway through one.
+
+### Look inside any commit
+
+<img src="media/commit-card.gif" alt="Clicking a release commit opens its details and the list of files it changed" width="440">
+
+Click any commit to see who made it, when, and which files it changed, with how many lines were added and removed in each. Here it's the 0.2.0 release. Click a file and you'll see the exact lines.
+
+"What changed in that release?" now takes two clicks. The buttons underneath only offer what makes sense for that commit, like checking it out, tagging it or undoing it.
+
+### Commit exactly what you mean to
+
+<img src="media/commit.gif" alt="Ticking two files, writing a message and committing" width="440">
+
+Tick the files you want, write a message (or let Claude write one with **Write**), and press **Commit**. Only the ticked files go in, and the rest wait for next time.
+
+You can split Claude's changes and your own into clean, separate commits instead of one big lump.
+
+### Switch branches in one click
+
+<img src="media/branches.gif" alt="Opening the branch list and switching to another branch" width="440">
+
+Click the branch name to see all your branches, which ones are already merged, and how old they are. Press **Switch** to move to one, and the changes you haven't committed yet come along with you.
+
+No branch names to remember. You can also see at a glance which old branches are safe to delete.
+
+### Keep track of every copy of your project
+
+<img src="media/worktrees.gif" alt="Opening the list of folders this project is checked out in" width="440">
+
+If your project is open in more than one folder (Claude sessions often make their own), the flower button lists them all, along with the branch each one is on.
+
+You can see what's happening in each copy, open one in Finder, and clean up the ones you're finished with.
 
 ## The pane
 

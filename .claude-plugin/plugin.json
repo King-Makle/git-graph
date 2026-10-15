@@ -1,6 +1,6 @@
 {
   "name": "git-graph",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A source control pane for the Claude desktop app: commit graph, staging, branches, worktrees and pull requests",
   "types": "./types/index.d.ts",
   "author": {
