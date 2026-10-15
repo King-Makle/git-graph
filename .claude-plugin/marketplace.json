@@ -1,0 +1,16 @@
+{
+  "name": "git-graph",
+  "owner": {
+    "name": "King Makle"
+  },
+  "metadata": {
+    "description": "The git-graph mod for Claude Code"
+  },
+  "plugins": [
+    {
+      "name": "git-graph",
+      "source": "./",
+      "description": "A source control pane for the Claude desktop app: commit graph, staging, branches, worktrees and pull requests"
+    }
+  ]
+}
